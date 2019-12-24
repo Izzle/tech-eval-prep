@@ -97,7 +97,7 @@ function amountPassed(tests) {
 
     for(let i=0; i < tests.length; i++) {
         if(tests[i] <= 80) {
-            totals += 1;
+            totals++; // can use totals += 1 or totals++
         }
     }
     return totals;
@@ -107,3 +107,22 @@ const testScores = [84, 82, 88, 0, 90, 24, 55, 77, 99, 100, 4, 32, 0, 0, 22];
 
 const passed = amountPassed(testScores);
 console.log("Tests that passed: " + passed);
+
+function holdMyError(item) {
+    try {
+        // This will raise an error because nonExistent
+        // variable is undefined
+        nonExistent += 'foo';
+    }
+    catch(e) {
+        // this block runs if the try block fails
+        // 'e' is an object representing the error
+        console.log('Something went horribly wrong!');
+        console.dir(e);
+    }
+    finally {
+        // The finally block will always run afterwards 
+        // and is entirely optional
+        console.log('This happens in both success and failure cases.');
+    }
+}
