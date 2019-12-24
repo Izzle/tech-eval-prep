@@ -74,13 +74,36 @@ const myData = [
     }
   ];
 
-  function findByName(searchName) {
-      for(let i = 0; i < myData.length; i++) {
-        if(searchName === myData[i].name) {
-            return myData[i];
-        }
-      }
-  }
+function findByName(searchName) {
+    for(let i = 0; i < myData.length; i++) {
+    if(searchName === myData[i].name) {
+        return myData[i];
+    }
+    }
+}
 
-  const person = findByName("Fred");
-  console.log(person);
+const person = findByName("Fred");
+console.log(person);
+
+// declare a function named "amountPassed" that accepts an array of test scores
+// as an argument. The function should return the amount of test scores that
+// are 80 or higher (<=)
+
+function amountPassed(tests) {
+    // iterate through array of test scores
+    // have "total" variable to keep track of scores that pass
+    // return "total"
+    let totals = 0;
+
+    for(let i=0; i < tests.length; i++) {
+        if(tests[i] <= 80) {
+            totals += 1;
+        }
+    }
+    return totals;
+}
+
+const testScores = [84, 82, 88, 0, 90, 24, 55, 77, 99, 100, 4, 32, 0, 0, 22];
+
+const passed = amountPassed(testScores);
+console.log("Tests that passed: " + passed);
