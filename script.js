@@ -126,3 +126,25 @@ function holdMyError(item) {
         console.log('This happens in both success and failure cases.');
     }
 }
+
+// make a function called makeOrder. It should take a table number,
+// an array of order items, and an order status as arguments. 
+// It should return an object with keys: tableNumbers, order, and status
+// and their associated values.
+
+function makeOrder(table, items, orderStatus) {
+    const foodOrder = {};
+
+    // Objects can be address using dot notation: foodOrder.order = whatever;
+    // Or with bracket notation: foodOrder['order'] = whatever. 
+    // bracket notation is normally used when you have a property name with a space
+    // such as 'table numbers'.
+    foodOrder.tableNumbers = table;
+    foodOrder.order = items;
+    foodOrder.status = orderStatus;
+
+    return foodOrder;
+}
+
+const foodOutput = makeOrder(2, ["Pizza", "Coke", "Hot dog"], "Complete");
+console.log(foodOutput);
