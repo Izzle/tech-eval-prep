@@ -205,3 +205,6 @@ function findById(items, idNum) {
         }
     }
 }
+
+const output3 = findById(data, 3);
+console.log(output3);
