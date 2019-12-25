@@ -148,3 +148,60 @@ function makeOrder(table, items, orderStatus) {
 
 const foodOutput = makeOrder(2, ["Pizza", "Coke", "Hot dog"], "Complete");
 console.log(foodOutput);
+
+// write a function called enrollInSummerSchool that takes a 
+// single argument "students". Students is an array of objects
+// with each object representing a student. 
+// enrollInSummerSchool should return an array of objects. 
+// For each object from the original array, it should return
+// the original name and course, but it should update the
+// status to "In Summer School".
+
+const studentData = [
+    {
+      name: 'Tim',
+      status: 'Current student',
+      course: 'Biology',
+    },
+    {
+      name: 'Sue',
+      status: 'Withdrawn',
+      course: 'Mathematics',
+    },
+    {
+      name: 'Liz',
+      status: 'On leave',
+      course: 'Computer science',
+    },
+  ];
+
+function enrollInSummerSchool(students) {
+    students.forEach(student => student.status = "In Summer School");
+
+    return students;
+}
+
+// write a function called findByID. This function takes 2 arguments
+// "items" and "idNum". items is an array of objects. idNum is 
+// the id we're trying to find in items. The function should
+// look for an item with the id 'idNum' in the array items.
+// If found, it should RETURN that item.
+
+const data = [
+    {id: 1,
+    foo: 'bar'},
+    {id: 2,
+    foo: 'bizz'},
+    {id: 3,
+    foo: 'buzz'},
+    {id: 4,
+    foo: 'bang'},
+];
+
+function findById(items, idNum) {
+    for(let i = 0; i < items.length; i++) {
+        if(items[i].id === idNum) {
+            return items[i];
+        }
+    }
+}
