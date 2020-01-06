@@ -53,6 +53,12 @@ objectLooper(myObj);
 
 Object.keys(myObj).forEach(key => console.log(`${key}: ${myObj[key]}`));
 
+// OR
+
+for (const property in myObj) {
+    console.log(`USING FOR IN LOOP - ${property}: ${myObj[property]}`);
+}
+
 // Write a function that accepts a "searchName" argument. Loop through an array of Objects
 // and return the object that matches against the "name" key
 
@@ -148,3 +154,39 @@ function makeOrder(table, items, orderStatus) {
 
 const foodOutput = makeOrder(2, ["Pizza", "Coke", "Hot dog"], "Complete");
 console.log(foodOutput);
+
+
+// filter vs for loop
+
+const ages = [22, 21, 18, 17, 99, 38, 32, 41, 19, 11, 2, 42, 3, 13];
+
+function overTwentyOne(people) {
+    let canDrink = [];
+
+    for(let i = 0; i < people.length; i++) {
+        if(people[i] >= 21) {
+            canDrink.push(people[i]);
+        }
+    }
+    return canDrink;
+}
+
+let drinkingAge = overTwentyOne(ages);
+console.log(`Using for loop: ${drinkingAge}`);
+
+//function over21(people) {
+//    const canDrink = people.filter(function(age){
+//        if(age >=21) {
+//            return true;
+//        }
+//    });
+//}
+
+function over21(people) {
+    const canDrink = people.filter(age => age >= 21);
+
+    return canDrink;
+}
+
+drinkingAge = over21(ages);
+console.log(`Using filter: ${drinkingAge}`);
